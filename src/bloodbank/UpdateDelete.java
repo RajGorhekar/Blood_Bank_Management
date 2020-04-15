@@ -38,7 +38,7 @@ public class UpdateDelete extends javax.swing.JFrame {
                 try (PreparedStatement statement = dbConnection.prepareStatement(query)) {
                     donors.setModel(DbUtils.resultSetToTableModel(statement.executeQuery()));
                     if (donors.getRowCount() == 0)
-                        jLabel1.setText("No results found");
+                        jLabel1.setText("No donors found");
                 }
             }
         } catch (SQLException ex) {
