@@ -78,11 +78,6 @@ public class RequestBlood extends javax.swing.JFrame {
         nameTextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         nameTextField.setToolTipText("");
         nameTextField.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 51), 1, true));
-        nameTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nameTextFieldActionPerformed(evt);
-            }
-        });
         nameTextField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 nameTextFieldKeyPressed(evt);
@@ -145,11 +140,6 @@ public class RequestBlood extends javax.swing.JFrame {
         quantityComboBox.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
         quantityComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Select --", "1", "2", "3", "4", "5" }));
         quantityComboBox.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        quantityComboBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                quantityComboBoxActionPerformed(evt);
-            }
-        });
         quantityComboBox.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 quantityComboBoxKeyPressed(evt);
@@ -158,11 +148,6 @@ public class RequestBlood extends javax.swing.JFrame {
 
         bGroupComboBox.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
         bGroupComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Select --", "A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-" }));
-        bGroupComboBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bGroupComboBoxActionPerformed(evt);
-            }
-        });
         bGroupComboBox.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 bGroupComboBoxKeyPressed(evt);
@@ -255,25 +240,17 @@ public class RequestBlood extends javax.swing.JFrame {
 
     private void bGroupComboBoxKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_bGroupComboBoxKeyPressed
         if (evt.getKeyCode() == 10)
-        dateChooser.requestFocus();
+            dateChooser.requestFocus();
     }//GEN-LAST:event_bGroupComboBoxKeyPressed
-
-    private void bGroupComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bGroupComboBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_bGroupComboBoxActionPerformed
 
     private void quantityComboBoxKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_quantityComboBoxKeyPressed
         if (evt.getKeyCode() == 10)
-        bGroupComboBox.requestFocus();
+            bGroupComboBox.requestFocus();
     }//GEN-LAST:event_quantityComboBoxKeyPressed
-
-    private void quantityComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quantityComboBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_quantityComboBoxActionPerformed
 
     private void dateChooserKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_dateChooserKeyPressed
         if (evt.getKeyCode() == 10)
-        requestButton.doClick();
+            requestButton.doClick();
     }//GEN-LAST:event_dateChooserKeyPressed
 
     private void requestButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestButtonActionPerformed
@@ -328,21 +305,17 @@ public class RequestBlood extends javax.swing.JFrame {
 
     private void locationTextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_locationTextFieldKeyPressed
         if (evt.getKeyCode() == 10)
-        quantityComboBox.requestFocus();
+            quantityComboBox.requestFocus();
     }//GEN-LAST:event_locationTextFieldKeyPressed
 
     private void nameTextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nameTextFieldKeyPressed
         if (evt.getKeyCode() == 10)
-        phoneTextField.requestFocus();
+            phoneTextField.requestFocus();
     }//GEN-LAST:event_nameTextFieldKeyPressed
-
-    private void nameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nameTextFieldActionPerformed
 
     private void phoneTextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_phoneTextFieldKeyPressed
         if (evt.getKeyCode() == 10)
-        locationTextField.requestFocus();
+            locationTextField.requestFocus();
     }//GEN-LAST:event_phoneTextFieldKeyPressed
 
     /**

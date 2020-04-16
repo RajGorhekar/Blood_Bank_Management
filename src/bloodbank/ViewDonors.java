@@ -227,6 +227,8 @@ public class ViewDonors extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        jComboBox2.setSelectedIndex(0);
+        jComboBox2ActionPerformed(evt);
         if (!jComboBox1.getSelectedItem().toString().equals("-- Select --"))
             performDbInit(mainQuery + " ORDER BY `" + jComboBox1.getSelectedItem().toString() + "`");
         else
@@ -252,7 +254,7 @@ public class ViewDonors extends javax.swing.JFrame {
 
     private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
         String text = searchTextField.getText();
-        String query = mainQuery + " WHERE " + jComboBox2.getSelectedItem().toString() + " LIKE ";
+        String query = mainQuery + " WHERE `" + jComboBox2.getSelectedItem().toString() + "` LIKE ";
         if (jComboBox2.getSelectedItem().toString().equals("Quantity"))
             query += Integer.parseInt(text);
         else

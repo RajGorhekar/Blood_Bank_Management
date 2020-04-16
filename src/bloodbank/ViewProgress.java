@@ -85,6 +85,11 @@ public class ViewProgress extends javax.swing.JFrame {
                 bGroupComboBoxActionPerformed(evt);
             }
         });
+        bGroupComboBox.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                bGroupComboBoxKeyReleased(evt);
+            }
+        });
 
         detailsTextArea.setEditable(false);
         detailsTextArea.setBackground(new java.awt.Color(255, 255, 153));
@@ -126,9 +131,8 @@ public class ViewProgress extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(searchButton, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(nameTextField)
-                        .addComponent(bGroupComboBox, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)))
+                    .addComponent(nameTextField)
+                    .addComponent(bGroupComboBox, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE)
                 .addContainerGap())
@@ -197,6 +201,11 @@ public class ViewProgress extends javax.swing.JFrame {
     private void bGroupComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bGroupComboBoxActionPerformed
         searchButton.setEnabled(!(nameTextField.getText().equals("") || bGroupComboBox.getSelectedItem().toString().equals("-- Select --")));
     }//GEN-LAST:event_bGroupComboBoxActionPerformed
+
+    private void bGroupComboBoxKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_bGroupComboBoxKeyReleased
+        if (evt.getKeyCode() == 10)
+            searchButton.doClick();
+    }//GEN-LAST:event_bGroupComboBoxKeyReleased
 
     /**
      * @param args the command line arguments

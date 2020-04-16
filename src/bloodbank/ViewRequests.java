@@ -269,7 +269,7 @@ public class ViewRequests extends javax.swing.JFrame {
 
     private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
         String text = searchTextField.getText();
-        String query = mainQuery + " WHERE ";
+        String query = mainQuery + " AND ";
         if (jComboBox2.getSelectedItem().toString().equals("Quantity"))
             query += "request_master.Quantity = " + Integer.parseInt(text);
         else {
@@ -325,6 +325,8 @@ public class ViewRequests extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox2ActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        jComboBox2.setSelectedIndex(0);
+        jComboBox2ActionPerformed(evt);
         if (!jComboBox1.getSelectedItem().toString().equals("-- Select --")) {
             String query = mainQuery;
             query += " ORDER BY ";

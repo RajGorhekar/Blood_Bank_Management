@@ -18,15 +18,15 @@ import net.proteanit.sql.DbUtils;
  * @author Raj
  */
 public class UpdateDelete extends javax.swing.JFrame {
-    private Object[] selectedArray;
+    private static Object[] selectedArray;
     /**
      * Creates new form UpdateDelete
+     * @param selectedArray
      */
-    public UpdateDelete() {}
     
     public UpdateDelete(Object[] selectedArray) {
         initComponents();
-        this.selectedArray = selectedArray;
+        UpdateDelete.selectedArray = selectedArray;
         performDbInit();
     }
     
@@ -264,7 +264,7 @@ public class UpdateDelete extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new UpdateDelete().setVisible(true);
+            new UpdateDelete(selectedArray).setVisible(true);
         });
     }
 
