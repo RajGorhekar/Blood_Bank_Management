@@ -243,12 +243,12 @@ public class DonateBlood extends javax.swing.JFrame {
         String donorBldQty = quantityComboBox.getSelectedItem().toString();
         String donorBldGrp = bGroupComboBox.getSelectedItem().toString();
         String donorPhone = phoneTextField.getText();
-        if (donorName.isEmpty() ||
-            donorEmail.isEmpty() ||
+        if (donorName.matches("^[\\\\p{L} .'-]+$") ||
+            donorEmail.matches("^[\\\\w!#$%&'*+/=?`{|}~^-]+(?:\\\\.[\\\\w!#$%&'*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\\\.)+[a-zA-Z]{2,6}$") ||
             donorLocation.isEmpty() ||
             donorBldQty.equals("-- Select --") ||
-            donorBldGrp.equals(" -- Select --") ||
-            donorPhone.isEmpty()) {
+            donorBldGrp.equals("-- Select --") ||
+            donorPhone.matches("\\\\d{10}")) {
             JOptionPane.showMessageDialog(null, "Please enter all the information correctly..", "Invalid Data", JOptionPane.ERROR_MESSAGE);
             return;
         }

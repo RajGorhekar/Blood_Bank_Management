@@ -260,11 +260,11 @@ public class RequestBlood extends javax.swing.JFrame {
         String patientBldQty = quantityComboBox.getSelectedItem().toString();
         String patientBldGrp = bGroupComboBox.getSelectedItem().toString();
         java.util.Date date = dateChooser.getDate();
-        if (patientName.isEmpty() ||
-            patientPhone.isEmpty() ||
+        if (patientName.matches("^[\\\\p{L} .'-]+$") ||
+            patientPhone.matches("\\\\d{10}") ||
             patientLocation.isEmpty() ||
             patientBldQty.equals("-- Select --") ||
-            patientBldGrp.equals(" -- Select --") ||
+            patientBldGrp.equals("-- Select --") ||
             date == null) {
             JOptionPane.showMessageDialog(null, "Please enter all the information correctly..", "Invalid Data", JOptionPane.ERROR_MESSAGE);
             return;
@@ -311,6 +311,8 @@ public class RequestBlood extends javax.swing.JFrame {
     private void nameTextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nameTextFieldKeyPressed
         if (evt.getKeyCode() == 10)
             phoneTextField.requestFocus();
+        else
+            JOptionPane.showMessageDialog(null, "Failed!");
     }//GEN-LAST:event_nameTextFieldKeyPressed
 
     private void phoneTextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_phoneTextFieldKeyPressed
