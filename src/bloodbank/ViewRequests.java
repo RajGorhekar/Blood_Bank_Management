@@ -320,13 +320,15 @@ public class ViewRequests extends javax.swing.JFrame {
             searchTextField.setBackground(new Color(255, 255, 153));
             searchTextField.setToolTipText(null);
             searchButton.setEnabled(false);
-            performDbInit(mainQuery);
+            jComboBox1ActionPerformed(evt);
         }
     }//GEN-LAST:event_jComboBox2ActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        jComboBox2.setSelectedIndex(0);
-        jComboBox2ActionPerformed(evt);
+        if (!jComboBox2.getSelectedItem().toString().equals("-- Select --")) {
+            jComboBox2.setSelectedIndex(0);
+            jComboBox2ActionPerformed(evt);
+        }
         if (!jComboBox1.getSelectedItem().toString().equals("-- Select --")) {
             String query = mainQuery;
             query += " ORDER BY ";

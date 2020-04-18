@@ -227,8 +227,10 @@ public class ViewDonors extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        jComboBox2.setSelectedIndex(0);
-        jComboBox2ActionPerformed(evt);
+        if (!jComboBox2.getSelectedItem().toString().equals("-- Select --")) {
+            jComboBox2.setSelectedIndex(0);
+            jComboBox2ActionPerformed(evt);
+        }
         if (!jComboBox1.getSelectedItem().toString().equals("-- Select --"))
             performDbInit(mainQuery + " ORDER BY `" + jComboBox1.getSelectedItem().toString() + "`");
         else
@@ -248,7 +250,7 @@ public class ViewDonors extends javax.swing.JFrame {
             searchTextField.setBackground(new Color(255, 255, 153));
             searchTextField.setToolTipText(null);
             searchButton.setEnabled(false);
-            performDbInit(mainQuery);
+            jComboBox1ActionPerformed(evt);
         }
     }//GEN-LAST:event_jComboBox2ActionPerformed
 
