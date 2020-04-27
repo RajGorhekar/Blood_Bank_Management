@@ -28,8 +28,7 @@ public class ViewRequests extends javax.swing.JFrame {
                         + "request_master.Status "
                         + "FROM request_master "
                         + "INNER JOIN patient_master "
-                        + "ON patient_master.Patient_ID = request_master.Patient_ID "
-            + "WHERE request_master.Status = 'Remaining'";
+                        + "ON patient_master.Patient_ID = request_master.Patient_ID";
     /**
      * Creates new form ViewRequests
      */
@@ -268,7 +267,7 @@ public class ViewRequests extends javax.swing.JFrame {
 
     private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
         String text = searchTextField.getText();
-        String query = mainQuery + " AND ";
+        String query = mainQuery + " WHERE ";
         if (jComboBox2.getSelectedItem().toString().equals("Quantity"))
             query += "request_master.Quantity = " + Integer.parseInt(text);
         else {
@@ -364,8 +363,14 @@ public class ViewRequests extends javax.swing.JFrame {
     }//GEN-LAST:event_formMouseReleased
 
     private void requestsMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_requestsMouseReleased
-        if (requests.getSelectedRow() != -1)
+        if (requests.getSelectedRow() != -1 && requests.getValueAt(requests.getSelectedRow(), 6).toString().equals("Remaining")) {
+            requests.setSelectionBackground(new Color(232, 57, 95));
             answerButton.setEnabled(true);
+        }
+        else {
+            requests.setSelectionBackground(Color.green);
+            answerButton.setEnabled(false);
+        }
     }//GEN-LAST:event_requestsMouseReleased
 
     private void searchTextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchTextFieldKeyPressed
