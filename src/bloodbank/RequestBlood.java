@@ -311,8 +311,6 @@ public class RequestBlood extends javax.swing.JFrame {
     private void nameTextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nameTextFieldKeyPressed
         if (evt.getKeyCode() == 10)
             phoneTextField.requestFocus();
-        else
-            JOptionPane.showMessageDialog(null, "Failed!");
     }//GEN-LAST:event_nameTextFieldKeyPressed
 
     private void phoneTextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_phoneTextFieldKeyPressed
